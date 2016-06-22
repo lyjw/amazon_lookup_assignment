@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<%= yield %>
+  <% if notice || alert %>
+    <%= react_component 'Notification', notification: notice || alert %>
+  <% end %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
